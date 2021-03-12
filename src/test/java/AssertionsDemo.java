@@ -28,6 +28,7 @@ public class AssertionsDemo {
         assertAll("person",
                 () -> assertEquals("Jane", person.getFirstName()),
                 () -> assertEquals("Doe", person.getLastName())
+
                  );
     }
 
