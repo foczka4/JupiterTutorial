@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -17,6 +19,16 @@ public class AssertionsDemo {
         assertTrue('a' < 'b', () -> "Assertion messages can be lazily evaluated --"
                                     + "to avoid constructing complex messages unnecessarily.");
 
+    }
+
+    @Test
+    void groupedAssertions() {
+        // In a grouped assertion all assertions are executed, and all
+        // failures will be reported together.
+        assertAll("person",
+                () -> assertEquals("Jane", person.getFirstName()),
+                () -> assertEquals("Doe", person.getLastName())
+                 );
     }
 
 
