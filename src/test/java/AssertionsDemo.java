@@ -16,6 +16,7 @@ public class AssertionsDemo {
                 "The optional failure message is now the last parameter");
         assertTrue('a' < 'b', () -> "Assertion messages can be lazily evaluated --"
                                     + "to avoid constructing complex messages unnecessarily.");
+
     }
 
 
